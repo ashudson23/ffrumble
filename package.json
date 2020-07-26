@@ -2,16 +2,16 @@
   "name": "ffrumble",
   "version": "0.0.1",
   "description": "Monitor FF network logs to deliver haptic feedback for controller players",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon index.js"
+  "engines": {
+    "node": "<=11.9.0"
   },
+  "engineStrict": true,
+  "main": "index.js",
   "author": "ahudson23",
   "license": "MIT",
   "gypfile": true,
   "dependencies": {
     "ffi": "^2.3.0",
-    "node-machina-ffxiv": "^2.35.24",
-    "nodemon": "^2.0.2"
+    "node-machina-ffxiv": "^2.36.23"
   }
 }
