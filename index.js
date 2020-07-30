@@ -1,7 +1,7 @@
 const MachinaFFXIV = require('node-machina-ffxiv');
 const types = require('./types');
 
-var ffi = require('ffi');
+var ffi = require('@saleae/ffi');
 
 var gamepad = ffi.Library('./build/Release/gamepad.dll', {
     "rumble": ['void', ['float', 'float', 'int']],

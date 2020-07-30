@@ -1,17 +1,14 @@
 {
   "name": "ffrumble",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Monitor FF network logs to deliver haptic feedback for controller players",
-  "engines": {
-    "node": "<=11.9.0"
-  },
   "engineStrict": true,
   "main": "index.js",
   "author": "ahudson23",
   "license": "MIT",
   "gypfile": true,
   "dependencies": {
-    "ffi": "^2.3.0",
+    "@saleae/ffi": "^3.0.2",
     "node-machina-ffxiv": "^2.36.23"
   }
 }
