@@ -1,5 +1,6 @@
 const MachinaFFXIV = require('node-machina-ffxiv');
 const types = require('./types');
+const opCodes = require('./opCodes');
 
 var ffi = require('@saleae/ffi');
 
@@ -21,20 +22,16 @@ Machina.start(async () => {
     gamepad.rumble(1, 1, 200);
 });
 
-Machina.on(types.actorCast, (content) => {
-    if (content.sourceActorSessionID !== me.actorSessionID) {
-        return;
-    }
-});
-
-Machina.on(types.actorControlSelf, (content) => {
-    me.actorSessionID = content.sourceActorSessionID;
-});
-
-Machina.on(types.effect, (content) => {
-    if (content.sourceActorSessionID !== me.actorSessionID) {
+Machina.on("raw", (content) => {
+    if (content.type && content.type === types.updatePositionHandler) {
+        me.actorSessionID = content.sourceActorSessionID;
         return;
     }
 
-    gamepad.rumble(1, 1, 150);
+    if (content.opcode === opCodes.actorCast) {
+        if (content.sourceActorSessionID !== me.actorSessionID) {
+            return;
+        }
+        gamepad.rumble(1, 1, 150);
+    }
 });
