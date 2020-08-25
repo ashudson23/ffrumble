@@ -1,6 +1,6 @@
 {
   "name": "ffrumble",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Monitor FF network logs to deliver haptic feedback for controller players",
   "main": "index.js",
   "author": "ahudson23",

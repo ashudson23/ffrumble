@@ -1,5 +1,4 @@
 const MachinaFFXIV = require('node-machina-ffxiv');
-const types = require('./types');
 const opCodes = require('./opCodes');
 
 var ffi = require('@saleae/ffi');
@@ -23,7 +22,7 @@ Machina.start(async () => {
 });
 
 Machina.on("raw", (content) => {
-    if (content.type && content.type === types.updatePositionHandler) {
+    if (content.opcode && content.opcode === opCodes.updatePositionHandler) {
         me.actorSessionID = content.sourceActorSessionID;
         return;
     }
