@@ -22,12 +22,15 @@ Machina.start(async () => {
 });
 
 Machina.on("raw", (content) => {
+    // console.log('content.opcode', content.opcode)
+
     if (content.opcode && content.opcode === opCodes.updatePositionHandler) {
         me.actorSessionID = content.sourceActorSessionID;
         return;
     }
 
     if (content.opcode === opCodes.actorCast) {
+        
         if (content.sourceActorSessionID !== me.actorSessionID) {
             return;
         }
