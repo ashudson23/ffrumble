@@ -30,7 +30,6 @@ Machina.on("raw", (content) => {
     }
 
     if (content.opcode === opCodes.actorCast) {
-        
         if (content.sourceActorSessionID !== me.actorSessionID) {
             return;
         }

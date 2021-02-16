@@ -1,4 +1,4 @@
 module.exports = ({
-    actorCast: 378,
-    updatePositionHandler: 435,
+  actorCast: 904,
+  updatePositionHandler: 794,
 });
