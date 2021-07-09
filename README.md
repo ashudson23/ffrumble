@@ -8,9 +8,13 @@ npm install --global node-gyp@latest
 npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
 npm config set msvs_version 2019
 ```
+1. Install Python 3.6.0
 
 #### How to run:
-1.From elevated terminal (bash if you're good):
 ```sh
 node index.js
+```
+Or,
+```sh
+sh run.sh
 ```
